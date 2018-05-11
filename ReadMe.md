@@ -2,6 +2,6 @@
 This script sets up an environment named 'standard' with CUDA, cuDNN, Ananconda and the fastai library.  
   
 ## Run  
-`git clone https://github.com/sbalk/setup_vm.git`  
-`chmod +x setup_ub1604`  
-`./setup_ub1604`
+`$ git clone https://github.com/sbalk/setup_vm.git`  
+`$ chmod +x setup_ub1604`  
+`$ ./setup_ub1604`
