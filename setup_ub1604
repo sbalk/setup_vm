@@ -48,7 +48,5 @@ echo "c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
 echo "c.NotebookApp.open_browser = False" >> ~/.jupyter/jupyter_notebook_config.py
 pip install ipywidgets
 jupyter nbextension enable --py widgetsnbextension --sys-prefix
-echo
-echo ---
-echo - YOU NEED TO REBOOT YOUR VM NOW
-echo ---
+
+sudo shutdown -r now
