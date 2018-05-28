@@ -3,5 +3,6 @@ This script sets up an environment named 'standard' with CUDA, cuDNN, Ananconda 
   
 ## Run  
 `$ git clone https://github.com/sbalk/setup_vm.git`  
+`$ cd setup_vm`  
 `$ chmod +x setup_ub1604`  
 `$ ./setup_ub1604`
