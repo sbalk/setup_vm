@@ -26,7 +26,7 @@ sudo cp cuda/include/*.* /usr/local/cuda/include/
 sudo cp cuda/lib64/*.* /usr/local/cuda/lib64/
 wget -N https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 if [ -d "$HOME/anaconda/" ]; then bash Anaconda3-5.0.1-Linux-x86_64.sh -b; else echo "Anaconda already installed"; fi
-cd
+cd ..
 cd setup_vm
 echo 'export PATH=~/anaconda3/bin:$PATH' >> ~/.bashrc
 export PATH=~/anaconda3/bin:$PATH
