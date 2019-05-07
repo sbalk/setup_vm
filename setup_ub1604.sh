@@ -38,6 +38,10 @@ conda config --add channels conda-forge
 conda install -y -c jupyter_contrib_nbextensions
 conda install -y -c nb_conda
 
+# Note that JPEG decoding can be a bottleneck, particularly if you have a fast GPU. You can optionally install an optimized JPEG decoder as follows (Linux)
+#conda uninstall --force jpeg libtiff -y
+#conda install -c conda-forge libjpeg-turbo
+#CC="cc -mavx2" pip install --no-cache-dir -U --force-reinstall --no-binary :all: --compile pillow-simd
 
 # install cudnn libraries
 sudo dpkg -i libcudnn7_7.5.1.10-1+cuda9.2_amd64.deb
