@@ -55,7 +55,17 @@ echo "c.NotebookApp.ip = '*'" >> $HOME/.jupyter/jupyter_notebook_config.py
 echo "c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
 echo "c.NotebookApp.allow_remote_access = True" >> $HOME/.jupyter/jupyter_notebook_config.py
 
+# add sublime style multi cursor code editing
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get --assume-yes install sublime-text
+mkdir .jupyter/custom
+mv custom.js ./jupyter/custom/
+
+# clean up
 rm -r cuda-repo-ubuntu1604_9.2.148-1_amd64.deb libcudnn7-dev_7.5.1.10-1+cuda9.2_amd64.deb libcudnn7_7.5.1.10-1+cuda9.2_amd64.deb 
 rm -r downloads/Miniconda3-latest-Linux-x86_64.sh downloads/cuda-repo-ubuntu1604_9.2.148-1_amd64.deb
 
+# generate ssh keys
 ssh-keygen -t rsa -f $HOME/.ssh/id_rsa -q -N ""
