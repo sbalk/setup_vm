@@ -61,7 +61,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get --assume-yes install sublime-text
 mkdir .jupyter/custom
-mv custom.js ./jupyter/custom/
+mv custom.js ~/.jupyter/custom/
 
 # clean up
 rm -r cuda-repo-ubuntu1604_9.2.148-1_amd64.deb libcudnn7-dev_7.5.1.10-1+cuda9.2_amd64.deb libcudnn7_7.5.1.10-1+cuda9.2_amd64.deb 
