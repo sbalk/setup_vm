@@ -8,17 +8,34 @@ sudo apt-get install nano -y
 echo 'Changing default shell to zsh...'
 chsh -s $(which zsh)
 
+# Switch to zsh
+zsh << EOF
+
 echo 'Installing Oh My Zsh...'
-# Install Oh My Zsh unattended using zsh
-curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh -s -- --unattended
+# Install Oh My Zsh unattended
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo 'Installing micromamba...'
 # Install micromamba using zsh
-zsh <(curl -L micro.mamba.pm/install.sh) </dev/null
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
 source ~/.zshrc
+EOF
 
 echo 'Adding aliases to ~/.zshrc...'
 cat << 'EOF' >> ~/.zshrc
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE='~/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='~/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
 
 # Micromamba aliases
 alias mm='micromamba'
