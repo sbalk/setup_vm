@@ -1,23 +1,18 @@
 #!/bin/zsh
 
-# # Switch to zsh
-# zsh << EOF
-
 echo 'Installing Oh My Zsh...'
 # Install Oh My Zsh unattended
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+echo 'Installing micromamba...'
 # Set the necessary environment variables
 export BIN_FOLDER="${HOME}/.local/bin"
 export INIT_YES="yes"
 export CONDA_FORGE_YES="yes"
 export PREFIX_LOCATION="${HOME}/micromamba"
-
-echo 'Installing micromamba...'
 # Install micromamba using zsh
-"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+sh <(curl -L micro.mamba.pm/install.sh)  </dev/null
 source ~/.zshrc
-# EOF
 
 echo 'Adding aliases to ~/.zshrc...'
 cat << 'EOF' >> ~/.zshrc
@@ -48,6 +43,9 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+# Add mamba to path because above doesn't work for scripts
+export PATH=$PATH:/root/.local/bin/
 
 EOF
 
