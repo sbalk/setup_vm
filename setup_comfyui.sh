@@ -2,9 +2,9 @@
 
 # apt-get install libgl1 -y.
 
-# ./test.sh: line 2: micromamba: command not found
-micromamba create -n ai python -y
-micromamba activate ai
+source ~/.zshrc
+mm create -n ai python -y
+mm activate ai
 
 pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu124
 
@@ -18,7 +18,7 @@ cd ..
 
 pip install comfy-cli
 comfy --install-completion
-comfy model download --url https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly
+# comfy model download --url https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly
 
 python main.py
 

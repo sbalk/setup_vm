@@ -2,7 +2,7 @@
 
 echo 'Installing Oh My Zsh...'
 # Install Oh My Zsh unattended
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 echo 'Installing micromamba...'
 # Set the necessary environment variables
