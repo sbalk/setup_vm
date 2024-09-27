@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# apt-get install libgl1 -y.
+
 # ./test.sh: line 2: micromamba: command not found
 micromamba create -n ai python -y
 micromamba activate ai
