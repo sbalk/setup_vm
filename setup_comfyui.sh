@@ -1,7 +1,6 @@
 #!/bin/zsh
 
-echo "${SHELL}"
-
+# ./test.sh: line 2: micromamba: command not found
 micromamba create -n ai python -y
 micromamba activate ai
 
@@ -14,6 +13,10 @@ pip install -r requirements.txt
 cd custom_nodes
 git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 cd ..
+
+pip install comfy-cli
+comfy --install-completion
+comfy model download --url https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly
 
 python main.py
 
