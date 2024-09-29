@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-echo 'Installing Oh My Zsh...'
-# Install Oh My Zsh unattended
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
 echo 'Installing micromamba...'
 # Set the necessary environment variables
 export BIN_FOLDER="${HOME}/.local/bin"
@@ -48,5 +44,9 @@ unset __mamba_setup
 export PATH=$PATH:/root/.local/bin/
 
 EOF
+
+echo 'Installing Oh My Zsh...'
+# Install Oh My Zsh unattended
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 echo 'Setup complete. Please log out and log back in to start using zsh as your default shell.'
