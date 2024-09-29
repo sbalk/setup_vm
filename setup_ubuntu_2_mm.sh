@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source ~/.zshrc
+
 echo 'Installing micromamba...'
 # Set the necessary environment variables
 export BIN_FOLDER="${HOME}/.local/bin"
