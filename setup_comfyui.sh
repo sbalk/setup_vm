@@ -3,7 +3,7 @@
 # apt-get install libgl1 -y.
 
 source ~/.zshrc
-mm create -n ai python -y
+mm create -n ai python=3.11 -y
 mm activate ai
 
 pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu124
