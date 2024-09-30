@@ -14,6 +14,7 @@ pip install -r requirements.txt
 
 cd custom_nodes
 git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+git clone https://github.com/crystian/ComfyUI-Crystools.git
 cd ..
 
 pip install comfy-cli
