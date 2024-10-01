@@ -5,6 +5,7 @@ echo 'Installing zsh and nano...'
 sudo apt-get install zsh -y
 sudo apt-get install nano -y
 sudo apt-get install ffmpeg -y
+sudo apt-get install git-lfs -y
 
 # Set scrolling on for tmux
 echo "set -g mouse on" >> ~/.tmux.conf
