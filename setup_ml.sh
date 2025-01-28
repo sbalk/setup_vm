@@ -1,7 +1,9 @@
 #!/bin/zsh
 
-# apt-get install libgl1 -y.
-
 source ~/.zshrc
-mm create -n ml python=3.12 jupyter -y
-mm activate ml
+mm create -n ml python=3.12 jupyter ipykernel nb_conda_kernels -y
+micromamba activate ml
+
+python -m ipykernel install --user --name ai --display-name "ai"
+
+jupyter notebook --no-browser --port=8118 --allow-root
