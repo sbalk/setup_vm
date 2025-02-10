@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 source ~/.zshrc
-mm create -n ml python=3.8 jupyter ipykernel nb_conda_kernels -y
-micromamba activate ml
+mm create -n ai python=3.8 jupyter ipykernel nb_conda_kernels -y
+micromamba activate ai
 
 python -m ipykernel install --user --name ai --display-name "ai"
 
