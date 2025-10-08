@@ -21,9 +21,9 @@ pip install comfy-cli
 comfy --install-completion
 # comfy model download --url https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly
 
-python main.py
+python main.py --port=8111
 
 # open new local terminal
-# ssh -p XXXX root@sshX.vast.ai -L 8188:localhost:8188
-# open http://127.0.0.1:8188/ in local browser
+# ssh -p X root@sshX.vast.ai -L 8111:localhost:8111
+# open http://127.0.0.1:8111/ in local browser
 

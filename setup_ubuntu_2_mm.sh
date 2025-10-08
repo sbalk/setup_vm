@@ -6,6 +6,8 @@ echo 'Installing Oh My Zsh...'
 # Install Oh My Zsh unattended
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
+source ~/.zshrc
+
 echo 'Installing micromamba...'
 # Set the necessary environment variables
 export BIN_FOLDER="${HOME}/.local/bin"
@@ -13,7 +15,8 @@ export INIT_YES="yes"
 export CONDA_FORGE_YES="yes"
 export PREFIX_LOCATION="${HOME}/micromamba"
 # Install micromamba using zsh
-sh <(curl -L micro.mamba.pm/install.sh)  </dev/null
+zsh <(curl -L micro.mamba.pm/install.sh)  </dev/null
+
 source ~/.zshrc
 
 echo 'Adding aliases to ~/.zshrc...'
