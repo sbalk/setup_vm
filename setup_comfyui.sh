@@ -16,6 +16,7 @@ cd custom_nodes
 git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 git clone https://github.com/crystian/ComfyUI-Crystools.git
 git clone https://github.com/rgthree/rgthree-comfy.git
+git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
 cd ..
 
 pip install comfy-cli
