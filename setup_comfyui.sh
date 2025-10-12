@@ -6,9 +6,11 @@ source ~/.zshrc
 mm create -n ai python=3.11 -y
 mm activate ai
 
+# first clone to be able to start downloading models
+git clone https://github.com/comfyanonymous/ComfyUI.git
+
 pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu124
 
-git clone https://github.com/comfyanonymous/ComfyUI.git
 cd ComfyUI
 pip install -r requirements.txt
 
